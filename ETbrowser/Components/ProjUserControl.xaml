@@ -1,0 +1,53 @@
+﻿<UserControl x:Class="ETbrowser.Components.ProjUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ETbrowser.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <Border Grid.Row="0" Grid.Column="0" Padding="20,20,20,5">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                
+                <TextBox x:Name="txtPath" Grid.Row="0"
+                         HorizontalAlignment="Stretch" VerticalAlignment="Top" 
+                         Text="d:\\tmp"/>
+            <Button Grid.Column="1" Click="Button_Click">Fill</Button>           
+            </Grid>
+
+        </Border>
+        <Border Grid.Row="1" Grid.Column="1" Padding="20,5,20,5">
+            <ListView x:Name="ListviewFileFolders">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn Header="Column 1" DisplayMemberBinding="{Binding Column1}"/>
+                        <GridViewColumn Header="Column 2" DisplayMemberBinding="{Binding Column2}"/>
+                        <GridViewColumn Header="Column 3" DisplayMemberBinding="{Binding Column3}"/>
+                    </GridView>
+                </ListView.View>
+                <ListViewItem >
+                    <ListViewItem.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Row 1 Column 1"/>
+                            <TextBlock Text="Row 1 Column 2"/>
+                            <TextBlock Text="Row 1 Column 3"/>
+                        </StackPanel>
+                    </ListViewItem.Content>
+                </ListViewItem>
+            </ListView>
+        </Border>
+
+
+
+    </Grid>
+</UserControl>
